@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Time Website</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="container">
+			<img src="image3.jpg">
+			
+			<div class="quotes">
+				<p style="color:white;">ASSIGNMENT</p>	
+				<button  onclick="changecolorandincrement()"  onclick="increment()" ><h1 id="current-time"></h1></button>	
+				<h5>COUNTER<h5 id="root"></h5></h5>						
+			</div>
+
+		</div>
+		<script>
+			let time = document.getElementById("current-time");
+
+			setInterval(() =>
+			{
+				let d = new Date();
+				time.innerHTML = d.toLocaleTimeString();	
+			},1000)
+
+			var data=0;
+			document.getElementById("root").innerText=data;
+			function changecolorandincrement()
+			{
+				// for incrementing ounter
+				data=data+1;
+				document.getElementById("root").innerText=data;
+
+				// for changing font color
+
+				let elm=document.getElementById("current-time");
+				 if(data%2==0){
+					elm.style.color='green';
+				}
+				else{
+					elm.style.color='red';
+				}
+			}
+			// function increment()
+			// {
+			// 	data=data+1;
+			// 	document.getElementById("root").innerText=data;
+			// }
+		</script>
+	</body>
+</html>
